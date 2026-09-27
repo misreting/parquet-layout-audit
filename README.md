@@ -112,7 +112,7 @@ different reasons.
 
 ## Reading the footer without a Parquet engine
 
-Like the sibling project [`parquet-schema-check`](https://github.com/__GH_OWNER__/parquet-schema-check),
+Like the sibling project [`parquet-schema-check`](https://github.com/agentscope-ai-java/parquet-schema-check),
 this hand-rolls just enough of Apache Thrift's compact protocol to walk a
 Parquet footer's `FileMetaData` struct -- see
 [`thrift_compact.py`](src/parquet_layout_audit/thrift_compact.py) and
@@ -259,13 +259,13 @@ threshold, `2` errors present, `3` usage problem (no readable files given).
   `footer_length + 8` bytes are read; row-group pruning is estimated from
   recorded statistics, never verified by scanning actual values.
 - **It does not compare schemas across files.** That's
-  [`parquet-schema-check`](https://github.com/__GH_OWNER__/parquet-schema-check)'s
+  [`parquet-schema-check`](https://github.com/agentscope-ai-java/parquet-schema-check)'s
   job -- a column's physical/logical type drifting between files is a
   different failure mode from a well-typed column laid out badly, and this
   tool doesn't duplicate that check.
 - **It does not read or lint query plans.** Whether a specific query's
   filter actually gets pushed into a scan, spills to disk, or misestimates
-  cardinality is [`duckdb-plan-lint`](https://github.com/__GH_OWNER__/duckdb-plan-lint)'s
+  cardinality is [`duckdb-plan-lint`](https://github.com/agentscope-ai-java/duckdb-plan-lint)'s
   job; this tool only looks at how a file is laid out on disk, independent
   of any particular query.
 - **The prunability estimate assumes filters ask for values that actually

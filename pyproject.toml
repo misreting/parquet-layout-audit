@@ -9,7 +9,7 @@ description = "Audit Parquet files for row-group sizing, missing statistics, and
 readme = "README.md"
 license = "MIT"
 requires-python = ">=3.11"
-authors = [{name = "__AUTHOR__"}]
+authors = [{name = "parquet-layout-audit"}]
 keywords = ["parquet", "performance", "row-group", "pruning", "ci"]
 classifiers = [
     "Development Status :: 4 - Beta",
@@ -35,7 +35,7 @@ dev = [
 ]
 
 [project.urls]
-Repository = "https://github.com/__GH_OWNER__/parquet-layout-audit"
+Repository = "https://github.com/agentscope-ai-java/parquet-layout-audit"
 
 [project.scripts]
 parquet-layout-audit = "parquet_layout_audit.cli:main"
